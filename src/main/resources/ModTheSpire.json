@@ -1,0 +1,11 @@
+{
+  "modid": "SixSamurai",
+  "name": "六武众",
+  "author_list": ["mark"],
+  "credits": "",
+  "description": "以紫炎带领六武众征战吧",
+  "version": "0.0.1",
+  "sts_version": "11-29-2020",
+  "mts_version": "3.19.0",
+  "dependencies": ["basemod","stslib"]
+}

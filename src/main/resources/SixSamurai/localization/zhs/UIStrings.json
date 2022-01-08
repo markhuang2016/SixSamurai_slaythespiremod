@@ -1,0 +1,39 @@
+{
+  "DiscardSixSamuraiCardAction": {
+    "TEXT": [
+      "从手牌丢弃 六武众 卡牌到弃牌堆"
+    ]
+  },
+
+  "ExhaustDiscardPileSixSamuraiCardAction": {
+    "TEXT": [
+      "消耗弃牌堆 六武众 的卡牌"
+    ]
+  },
+  "RetrieveDiscardPileSixSamuraiCardAction": {
+    "TEXT": [
+      "从弃牌堆检索六武众卡牌到手牌"
+    ]
+  },
+  "RetrieveDrawPileCardAction": {
+    "TEXT": [
+      "从抽牌堆加入指定卡牌到手牌"
+    ]
+  },
+  "RetrieveDrawPileSixSamuraiCardAction": {
+    "TEXT": [
+      "从抽牌堆检索六武众卡牌到手牌"
+    ]
+  },
+  "SixSamuraiCardInHandFreeUseOnceAction": {
+    "TEXT": [
+      "手牌中的 六武众 卡牌下次使用不消耗能量"
+    ]
+  },
+
+  "RetrieveExhaustPileSixSamuraiCardAction": {
+    "TEXT": [
+      " 从已 消耗牌 中选择 六武众 卡加入手牌",
+    ]
+  }
+}
