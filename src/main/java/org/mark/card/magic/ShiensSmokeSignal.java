@@ -31,7 +31,6 @@ public class ShiensSmokeSignal extends AbstractSixSamuraiCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        // 选卡不能终止
         this.addToBot(new RetrieveDrawPileSixSamuraiCardAction(abstractPlayer, this.magicNumber));
     }
 }

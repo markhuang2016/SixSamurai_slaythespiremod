@@ -102,6 +102,7 @@ public class Shien extends CustomPlayer {
         startingDeck.add(HandOfTheSixSamurai.ID);
         startingDeck.add(LegendarySixSamuraiEnishi.ID);
         startingDeck.add(LegendarySixSamuraiKageki.ID);
+        startingDeck.add(LegendarySixSamuraiKizan.ID);
         startingDeck.add(LegendarySixSamuraiMizuho.ID);
         startingDeck.add(LegendarySixSamuraiShien.ID);
         startingDeck.add(LegendarySixSamuraiShinai.ID);

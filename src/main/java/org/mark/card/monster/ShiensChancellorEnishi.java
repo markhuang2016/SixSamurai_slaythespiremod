@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.ExhaustDiscardPileSixSamuraiCardAction;
 import org.mark.action.KillMinionAction;
+import org.mark.card.AbstractSixSamuraiCard;
 import org.mark.enums.CardTag;
 
 /**
@@ -14,7 +15,7 @@ import org.mark.enums.CardTag;
  * @author: huangzhiqiang
  * @create: 2022/01/06 11:27
  */
-public class ShiensChancellorEnishi extends SixSamuraiCard {
+public class ShiensChancellorEnishi extends AbstractSixSamuraiCard {
 
     public static final String ID = ShiensChancellorEnishi.class.getSimpleName();
 
@@ -36,7 +37,6 @@ public class ShiensChancellorEnishi extends SixSamuraiCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // 消耗 !M! 张弃牌堆中的 六武众 卡牌，造成 !D!点伤害，若目标为 爪牙 ，击杀
-        // todo 未选择卡牌且未消耗
         this.addToBot(new ExhaustDiscardPileSixSamuraiCardAction(p, this.magicNumber));
         this.addToBot(new KillMinionAction(p, m, this.damage));
     }

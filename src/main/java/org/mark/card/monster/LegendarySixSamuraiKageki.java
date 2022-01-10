@@ -34,7 +34,6 @@ public class LegendarySixSamuraiKageki extends LegendarySixSamuraiCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // todo 优化展示伤害
         int damage = baseDamage;
         if (p.hand.group.stream().anyMatch(x -> x.hasTag(CardTag.SixSamurai) && !x.cardID.contains(ID))) {
             damage += 15;

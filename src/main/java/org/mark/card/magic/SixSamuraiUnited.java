@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mark.card.AbstractSixSamuraiCard;
 import org.mark.card.monster.SixSamuraiCard;
 import org.mark.enums.CardTag;
 
@@ -15,7 +16,7 @@ import org.mark.enums.CardTag;
  * @author: huangzhiqiang
  * @create: 2022/01/05 17:46
  */
-public class SixSamuraiUnited extends SixSamuraiCard {
+public class SixSamuraiUnited extends AbstractSixSamuraiCard {
 
     public static final String ID = SixSamuraiUnited.class.getSimpleName();
 

@@ -37,7 +37,7 @@
   },
   "GreatShogunShien": {
     "NAME": "大将军紫炎",
-    "DESCRIPTION": "造成 !D! 点伤害"
+    "DESCRIPTION": "造成 !D! 点伤害。若手牌有两张及以上的 六武众 卡牌时 ，此卡不消耗能量"
   },
   "HandOfTheSixSamurai": {
     "NAME": "六武众的先导",
@@ -50,6 +50,10 @@
   "LegendarySixSamuraiKageki": {
     "NAME": "真六武众-阴鬼",
     "DESCRIPTION": "造成 !D! 点伤害，若手牌中除 真六武众-阴鬼 外的 六武众 卡牌，伤害增加15点。NL 打出后可选择手牌中的一张 六武众 卡牌，此卡下一次打出时不消耗 [G] "
+  },
+  "LegendarySixSamuraiKizan": {
+    "NAME": "真六武众-辉斩",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若除此卡外手牌有 六武众 卡，这张卡不消耗 [G]。 NL 若除此卡外手牌有两张及以上 六武众 卡，这张卡额外造成3点伤害。 "
   },
   "LegendarySixSamuraiMizuho": {
     "NAME": "真六武众-瑞穗",

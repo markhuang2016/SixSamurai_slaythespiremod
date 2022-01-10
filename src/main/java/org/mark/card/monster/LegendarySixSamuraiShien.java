@@ -1,9 +1,12 @@
 package org.mark.card.monster;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.DiscardSixSamuraiCardAction;
+import org.mark.enums.CardTag;
+import org.mark.power.ArtifactEveryTurnPower;
 
 /**
  * @description: 真六武众-紫炎
@@ -27,11 +30,13 @@ public class LegendarySixSamuraiShien extends LegendarySixSamuraiCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DiscardSixSamuraiCardAction(p, 2));
-        // TODO 没回和获取 免疫Debuff 一次
+        // TODO 每回合获取 免疫Debuff 一次
+        this.addToBot(new ApplyPowerAction(p, p, new ArtifactEveryTurnPower(p)));
     }
 
     @Override
-    public AbstractCard makeCopy() {
-        return new LegendarySixSamuraiShien();
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return super.canUse(p, m) &&
+            p.hand.group.stream().filter(x -> x.hasTag(CardTag.SixSamurai) && !x.uuid.equals(this.uuid)).count() >= 2;
     }
 }

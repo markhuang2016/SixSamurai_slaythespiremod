@@ -45,7 +45,6 @@ public class SecretSixSamuraiFuma extends SixSamuraiCard {
 
     @Override
     public void triggerOnManualDiscard() {
-        // TODO 可以从抽牌堆选 此卡 以外的 六武众 卡加入手牌
         this.addToBot(new RetrieveDrawPileSixSamuraiCardAction(AbstractDungeon.player, 1));
     }
 }

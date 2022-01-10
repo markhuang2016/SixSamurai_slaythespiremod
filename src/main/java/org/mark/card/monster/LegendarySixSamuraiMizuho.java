@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.DiscardSixSamuraiCardAction;
 import org.mark.action.KillMinionAction;
+import org.mark.enums.CardTag;
 
 import java.util.Objects;
 
@@ -22,7 +23,7 @@ public class LegendarySixSamuraiMizuho extends LegendarySixSamuraiCard {
     public LegendarySixSamuraiMizuho() {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         this.tags.add(CardTags.STRIKE);
-        this.baseDamage = 6;
+        this.baseDamage = 16;
     }
 
     @Override
@@ -30,11 +31,6 @@ public class LegendarySixSamuraiMizuho extends LegendarySixSamuraiCard {
         this.addToBot(new DiscardSixSamuraiCardAction(p, 1));
         this.addToBot(new KillMinionAction(p, m, this.damage));
         refresh();
-    }
-
-    @Override
-    public AbstractCard makeCopy() {
-        return new LegendarySixSamuraiMizuho();
     }
 
     @Override
@@ -71,7 +67,6 @@ public class LegendarySixSamuraiMizuho extends LegendarySixSamuraiCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        // TODO 有解放卡牌
-        return super.canUse(p, m);
+        return super.canUse(p, m) && p.hand.group.stream().anyMatch(x -> x.hasTag(CardTag.SixSamurai));
     }
 }

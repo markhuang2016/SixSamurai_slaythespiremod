@@ -17,7 +17,6 @@ public class DoubleEdgedSwordTechnique extends AbstractSixSamuraiCard {
 
     public DoubleEdgedSwordTechnique() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        // TODO 未升级只能选1张
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

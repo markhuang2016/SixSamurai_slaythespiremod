@@ -203,6 +203,7 @@ public class SixSamuraiMod implements RelicGetSubscriber, PostPowerApplySubscrib
         this.cardsToAdd.add(new HandOfTheSixSamurai());
         this.cardsToAdd.add(new LegendarySixSamuraiEnishi());
         this.cardsToAdd.add(new LegendarySixSamuraiKageki());
+        this.cardsToAdd.add(new LegendarySixSamuraiKizan());
         this.cardsToAdd.add(new LegendarySixSamuraiMizuho());
         this.cardsToAdd.add(new LegendarySixSamuraiShien());
         this.cardsToAdd.add(new LegendarySixSamuraiShinai());

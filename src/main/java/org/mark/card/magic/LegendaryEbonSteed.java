@@ -36,7 +36,5 @@ public class LegendaryEbonSteed extends AbstractSixSamuraiCard {
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber)));
 
     }
-    // TODO
-    // ①：名字带有「六武众」的怪兽才能装备。装备怪兽的攻击力·守备力上升200。装备怪兽被破坏的场合，这张卡代替破坏。
 
 }

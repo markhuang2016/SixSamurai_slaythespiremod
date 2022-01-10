@@ -33,7 +33,6 @@ public class LegendarySixSamuraiEnishi extends LegendarySixSamuraiCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // 消耗弃牌堆 !M! 张卡，目标获得 眩晕
-        // TODO 选卡不能终止
         this.addToBot(new ExhaustDiscardPileSixSamuraiCardAction(p, this.magicNumber));
         this.addToBot(new StunMonsterAction(m, p, 1));
     }

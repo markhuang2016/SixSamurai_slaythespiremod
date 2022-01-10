@@ -29,7 +29,7 @@ public class LegendarySixSamuraiShinai extends LegendarySixSamuraiCard {
     public LegendarySixSamuraiShinai() {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         this.tags.add(CardTags.STRIKE);
-        this.baseDamage = 6;
+        this.baseDamage = 15;
     }
 
     @Override
