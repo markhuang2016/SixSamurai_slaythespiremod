@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.SixSamuraiCardInHandFreeUseOnceAction;
 import org.mark.enums.CardTag;
+import org.mark.enums.DamageTypeEnum;
 
 /**
  * @description: 真六武众-阴鬼
@@ -38,7 +39,7 @@ public class LegendarySixSamuraiKageki extends LegendarySixSamuraiCard {
         if (p.hand.group.stream().anyMatch(x -> x.hasTag(CardTag.SixSamurai) && !x.cardID.contains(ID))) {
             damage += 15;
         }
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageTypeEnum.SixSamurai)));
         this.addToBot(new SixSamuraiCardInHandFreeUseOnceAction(p, 1));
 
     }

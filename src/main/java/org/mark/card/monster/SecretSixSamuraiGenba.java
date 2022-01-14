@@ -10,7 +10,7 @@ import org.mark.action.RetrieveExhaustPileSixSamuraiCardAction;
  * @author: huangzhiqiang
  * @create: 2022/01/06 14:38
  */
-public class SecretSixSamuraiGenba extends SixSamuraiCard {
+public class SecretSixSamuraiGenba extends SecretSixSamuraiCard {
 
     public static final String ID = SecretSixSamuraiGenba.class.getSimpleName();
 

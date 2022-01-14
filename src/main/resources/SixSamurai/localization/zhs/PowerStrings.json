@@ -1,33 +1,38 @@
 {
   "ArtifactEveryTurnPower": {
-    "NAME": "人工制品",
+    "NAME": "无限人工制品",
     "DESCRIPTIONS": [
       "每回合开始时，若无人工制品，获得一点人工制品"
     ]
   },
-  "VUPShionMod:SupportArmamentPower": {
-    "NAME": "支援兵装",
+  "SixSamuraiExtraBlockPower": {
+    "NAME": "六武众防护",
     "DESCRIPTIONS": [
-      " 层数上限为 #b20 。 NL 本场战斗结束时，如果层数大于等于 #b10 ，则随机升级牌组中的一张牌。"
+      " 下次六武众卡牌获取格挡时额外获得 !B! 点"
     ]
   },
-  "VUPShionMod:BadgeOfThePaleBlueCrossPower": {
-    "NAME": "苍蓝十字徽记",
+  "SixSamuraiExtraDamagePower": {
+    "NAME": "六武众辅助打击",
     "DESCRIPTIONS": [
-      "层数上限为 #b10 。 NL 本场战斗结束时，如果层数大于等于 #b10 ，则随机升级牌组中的一张牌。"
+      " 下次六武众卡牌造成伤害时额外造成 !D! 点伤害"
     ]
   },
-  "VUPShionMod:MarkOfThePaleBlueCrossPower": {
-    "NAME": "苍蓝十字印记",
+  "SixSamuraiRealDamageDrawCardPower": {
+    "NAME": "六武众辅助抽牌",
     "DESCRIPTIONS": [
-      "给予对方的印记，可以提高自己一部分卡牌的伤害"
+      "六武众卡牌对怪物造成生命值伤害时，抽卡"
     ]
   },
-  "VUPShionMod:PursuitPower": {
-    "NAME": "追击",
+  "SpiritOfTheSixSamuraiPower": {
+    "NAME": "六武众的御灵代能力",
     "DESCRIPTIONS": [
-      "目标的回合开始时， #y追击浮游炮 将攻击目标一次，造成 #b",
-      " 点伤害。"
+      "每回合开始时获得 !M! 层 六武众辅助攻击、六武众辅助格挡、六武众辅助抽卡"
+    ]
+  },
+  "SwiftstrikeArmorPower": {
+    "NAME": "神速之具足",
+    "DESCRIPTIONS": [
+      "每回合抽卡后额外抽 !M! 张卡，若抽到的是 六武众 卡，此卡下次使用不消耗 [G] 。"
     ]
   },
   "VUPShionMod:DimensionSplitterAriaUpgradePower": {

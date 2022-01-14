@@ -16,19 +16,19 @@ import org.apache.logging.log4j.Logger;
  */
 public class ArtifactEveryTurnPower extends AbstractPower {
 
-    private static final Logger log = LogManager.getLogger(ArtifactEveryTurnPower.class.getSimpleName());
-
     public static final String POWER_ID = ArtifactEveryTurnPower.class.getSimpleName();
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+
+    private static final Logger log = LogManager.getLogger(POWER_ID);
 
     public ArtifactEveryTurnPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = 1;
-        this.updateDescription();
+        this.description = DESCRIPTIONS[0];
         this.loadRegion("artifact");
         this.type = PowerType.BUFF;
     }

@@ -14,5 +14,7 @@ public class CardTag {
     public static AbstractCard.CardTags SixSamurai;
     @SpireEnum
     public static AbstractCard.CardTags LegendarySixSamurai;
+    @SpireEnum
+    public static AbstractCard.CardTags SecretSixSamurai;
 
 }

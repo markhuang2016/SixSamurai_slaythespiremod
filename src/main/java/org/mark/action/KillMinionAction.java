@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mark.enums.DamageTypeEnum;
 
 /**
  * @description: 如果目标为爪牙，击杀
@@ -34,10 +35,10 @@ public class KillMinionAction extends AbstractGameAction {
         if (target.hasPower("Minion")) {
             this.addToBot(
                 new DamageAction(target,
-                    new DamageInfo(source, target.currentBlock + target.currentHealth, DamageInfo.DamageType.NORMAL),
+                    new DamageInfo(source, target.currentBlock + target.currentHealth, DamageTypeEnum.SixSamurai),
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         } else if (this.amount > 0) {
-            this.addToBot(new DamageAction(target, new DamageInfo(source, this.amount, DamageInfo.DamageType.NORMAL),
+            this.addToBot(new DamageAction(target, new DamageInfo(source, this.amount, DamageTypeEnum.SixSamurai),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
         this.isDone = true;

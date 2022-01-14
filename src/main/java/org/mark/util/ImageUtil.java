@@ -16,18 +16,78 @@ import java.io.IOException;
  */
 public class ImageUtil {
 
-    public static final String resourceDir =
-        "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/";
-    public static final String resizeDir =
-        "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/resize/";
-    public static final String destinationDir =
-        "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/dest/";
-    public static final String templateImagePath =
-        "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/template.png";
-
     public static void main(String[] args) throws IOException {
+        final String resourceDir =
+            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/relics/";
+        final String resizeDir =
+            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/relics/resize/";
+        final String destinationDir =
+            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/relics/outline/";
+        final String templateImagePath =
+            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/relics/template.png";
+        File templateImage = new File(templateImagePath);
+        if (!templateImage.exists()) {
+            templateImage.createNewFile();
+        }
 
-        File templateImage = new File(ImageUtil.templateImagePath);
+        ImageIO.write(new BufferedImage(128, 128, BufferedImage.TYPE_INT_BGR), "png", templateImage);
+
+        File resDir = new File(resourceDir);
+        File destDir = new File(destinationDir);
+        if (!destDir.exists()) {
+            destDir.mkdir();
+        }
+        File resiDir = new File(resizeDir);
+        if (!resiDir.exists()) {
+            resiDir.mkdir();
+        }
+
+        File[] files = resDir.listFiles();
+
+        for (File file : files) {
+            if (file.isDirectory()) {
+                continue;
+            }
+            String name = file.getName();
+            if (!name.endsWith("png")) {
+                continue;
+            }
+            File resizeFile = new File(resizeDir + name);
+            if (!resizeFile.exists()) {
+                resizeFile.createNewFile();
+            }
+            File destFile = new File(destinationDir + name);
+            if (!destFile.exists()) {
+                destFile.createNewFile();
+            }
+            ImageUtil.resizeImage(file.getPath(), resizeDir + name, 120, 120, true);
+            ImageUtil.mergeImages(templateImagePath, resizeDir + name, 4, 4, destFile.getPath(), "png", false);
+        }
+
+        //        String resource =
+        //            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/CunningOfTheSixSamurai.png";
+        //        String dest =
+        //            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/resize/CunningOfTheSixSamurai.png";
+        //        File file = new File(dest);
+        //        if (!file.exists()) {
+        //            file.createNewFile();
+        //        }
+        //
+        //        resizeImage(resource, dest, 380, 380, false);
+
+    }
+
+    public static void refreshCardsImage() throws IOException {
+
+        final String resourceDir =
+            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/";
+        final String resizeDir =
+            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/resize/";
+        final String destinationDir =
+            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/dest/";
+        final String templateImagePath =
+            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/template.png";
+        File templateImage = new File(templateImagePath);
         if (!templateImage.exists()) {
             templateImage.createNewFile();
         }
@@ -65,18 +125,6 @@ public class ImageUtil {
             ImageUtil.resizeImage(file.getPath(), resizeDir + name, 190, 190, true);
             ImageUtil.mergeImages(templateImagePath, resizeDir + name, 30, 0, destFile.getPath(), "png", false);
         }
-
-//        String resource =
-//            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/CunningOfTheSixSamurai.png";
-//        String dest =
-//            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/resize/CunningOfTheSixSamurai.png";
-//        File file = new File(dest);
-//        if (!file.exists()) {
-//            file.createNewFile();
-//        }
-//
-//        resizeImage(resource, dest, 380, 380, false);
-
     }
 
     /**

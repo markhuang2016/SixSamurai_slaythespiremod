@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mark.enums.DamageTypeEnum;
 
 import java.util.ArrayList;
 
@@ -40,7 +41,7 @@ public class KillAllMinionAction extends AbstractGameAction{
                 damages[i] = this.amount;
             }
         }
-        this.addToBot(new DamageAllEnemiesAction(this.source, damages, DamageInfo.DamageType.NORMAL,
+        this.addToBot(new DamageAllEnemiesAction(this.source, damages, DamageTypeEnum.SixSamurai,
             AttackEffect.SLASH_HORIZONTAL));
         this.isDone = true;
 

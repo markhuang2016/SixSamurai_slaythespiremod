@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mark.action.RetrieveDiscardPileSixSamuraiCardAction;
+import org.mark.enums.DamageTypeEnum;
 
 import java.util.Objects;
 
@@ -42,7 +43,7 @@ public class LegendarySixSamuraiShinai extends LegendarySixSamuraiCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageTypeEnum.SixSamurai),
             AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         refresh();
     }

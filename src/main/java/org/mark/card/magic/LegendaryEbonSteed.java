@@ -34,7 +34,6 @@ public class LegendaryEbonSteed extends AbstractSixSamuraiCard {
         // 获取 !M! 点 力量 和 敏捷 。
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber)));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber)));
-
     }
 
 }

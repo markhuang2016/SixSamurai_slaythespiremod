@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.enums.CardTag;
+import org.mark.enums.DamageTypeEnum;
 
 /**
  * @description: 真六武众-辉斩
@@ -33,7 +34,7 @@ public class LegendarySixSamuraiKizan extends LegendarySixSamuraiCard {
         if (p.hand.group.stream().filter(x -> x.hasTag(CardTag.SixSamurai) && !x.uuid.equals(this.uuid)).count() >= 2) {
             damage += 3;
         }
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageTypeEnum.SixSamurai)));
         refresh();
     }
 

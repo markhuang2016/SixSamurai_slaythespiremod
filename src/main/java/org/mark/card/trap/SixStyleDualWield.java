@@ -40,9 +40,6 @@ public class SixStyleDualWield extends AbstractSixSamuraiCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // fixme 两只怪物时无效
-        AbstractMonster randomMonster = AbstractDungeon.getMonsters()
-            .getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
         List<AbstractMonster> monsters =
             AbstractDungeon.getCurrRoom().monsters.monsters.stream().filter(x -> !x.isDeadOrEscaped())
                 .collect(Collectors.toList());

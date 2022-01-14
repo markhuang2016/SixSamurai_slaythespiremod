@@ -13,7 +13,7 @@ import org.mark.action.RetrieveDrawPileSixSamuraiCardAction;
  * @author: huangzhiqiang
  * @create: 2022/01/06 14:28
  */
-public class SecretSixSamuraiFuma extends SixSamuraiCard {
+public class SecretSixSamuraiFuma extends SecretSixSamuraiCard {
 
     public static final String ID = SecretSixSamuraiFuma.class.getSimpleName();
 

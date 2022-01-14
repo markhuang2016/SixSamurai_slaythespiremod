@@ -35,7 +35,6 @@ public class SixScrollsOfTheSamurai extends AbstractSixSamuraiCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // 丢弃 !M! 张 六武众 卡，把抽牌堆的一张 大将军紫炎 加入手牌
-        // TODO 不是抽大将军而是检索六武众
         this.addToBot(new DiscardSixSamuraiCardAction(p, this.magicNumber));
         this.addToBot(new RetrieveDrawPileCardAction(p, p, x -> x.cardID.contains(GreatShogunShien.ID), 1));
     }

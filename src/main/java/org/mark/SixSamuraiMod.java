@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -18,16 +19,14 @@ import org.apache.logging.log4j.Logger;
 import org.mark.card.*;
 import org.mark.card.magic.*;
 import org.mark.card.monster.*;
-import org.mark.card.trap.DoubleEdgedSwordTechnique;
-import org.mark.card.trap.ReturnOfTheSixSamurai;
-import org.mark.card.trap.SixStrikeThunderBlast;
-import org.mark.card.trap.SixStyleDualWield;
+import org.mark.card.trap.*;
 import org.mark.character.Shien;
 import org.mark.enums.CardEnum;
 import org.mark.enums.PlayerEnum;
 import org.mark.relic.GatewayOfTheSix;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @description: 六武众-紫炎
@@ -125,7 +124,7 @@ public class SixSamuraiMod implements RelicGetSubscriber, PostPowerApplySubscrib
         BaseMod.loadCustomStringsFile(UIStrings.class, path + "UIStrings.json");
         BaseMod.loadCustomStringsFile(CardStrings.class, path + "CardStrings.json");
 //        BaseMod.loadCustomStringsFile(MonsterStrings.class, assetPath(path + "MonsterStrings.json"));
-//        BaseMod.loadCustomStringsFile(PowerStrings.class, assetPath(path + "PowerStrings.json"));
+        BaseMod.loadCustomStringsFile(PowerStrings.class, path + "PowerStrings.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, path + "RelicStrings.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, path + "CharacterStrings.json");
 //        BaseMod.loadCustomStringsFile(OrbStrings.class, assetPath(path + "OrbStrings.json"));
@@ -193,14 +192,19 @@ public class SixSamuraiMod implements RelicGetSubscriber, PostPowerApplySubscrib
         this.cardsToAdd.add(new CunningOfTheSixSamurai());
         this.cardsToAdd.add(new LegendaryEbonSteed());
         this.cardsToAdd.add(new SecretSkillsOfTheSixSamurai());
+        this.cardsToAdd.add(new ShiensCastleOfMist());
         this.cardsToAdd.add(new ShiensSmokeSignal());
         this.cardsToAdd.add(new SixSamuraiUnited());
         this.cardsToAdd.add(new SixScrollsOfTheSamurai());
         this.cardsToAdd.add(new SixStrikeTripleImpact());
+        this.cardsToAdd.add(new TempleOfTheSix());
 
         // 怪兽卡
+        this.cardsToAdd.add(new GrandMasterOfTheSixSamurai());
         this.cardsToAdd.add(new GreatShogunShien());
         this.cardsToAdd.add(new HandOfTheSixSamurai());
+        this.cardsToAdd.add(new KagemushaOfTheSixSamurai());
+        this.cardsToAdd.add(new LegendarySecretOfTheSixSamurai());
         this.cardsToAdd.add(new LegendarySixSamuraiEnishi());
         this.cardsToAdd.add(new LegendarySixSamuraiKageki());
         this.cardsToAdd.add(new LegendarySixSamuraiKizan());
@@ -210,11 +214,13 @@ public class SixSamuraiMod implements RelicGetSubscriber, PostPowerApplySubscrib
         this.cardsToAdd.add(new SecretSixSamuraiFuma());
         this.cardsToAdd.add(new SecretSixSamuraiGenba());
         this.cardsToAdd.add(new ShiensChancellorEnishi());
+        this.cardsToAdd.add(new SpiritOfTheSixSamurai());
         // 陷阱卡
         this.cardsToAdd.add(new DoubleEdgedSwordTechnique());
         this.cardsToAdd.add(new ReturnOfTheSixSamurai());
         this.cardsToAdd.add(new SixStrikeThunderBlast());
         this.cardsToAdd.add(new SixStyleDualWield());
+        this.cardsToAdd.add(new SwiftstrikeArmor());
 
 
 //        this.cardsToAdd.add(new DefendShien());

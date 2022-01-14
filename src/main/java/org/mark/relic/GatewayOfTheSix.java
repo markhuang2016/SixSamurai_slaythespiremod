@@ -1,11 +1,12 @@
 package org.mark.relic;
 
-import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.mark.SixSamuraiMod;
 import org.mark.action.RetrieveDrawPileSixSamuraiCardAction;
 import org.mark.enums.CardTag;
@@ -20,19 +21,16 @@ import org.mark.enums.CardTag;
  * @author: huangzhiqiang
  * @create: 2021/12/27 17:59
  */
-public class GatewayOfTheSix extends CustomRelic {
+public class GatewayOfTheSix extends AbstractRightClickRelic {
 
-    public static final String ID = "GatewayOfTheSix";
+    public static final String ID = GatewayOfTheSix.class.getSimpleName();
     // TODO 图片
-    public static final String IMG_PATH = SixSamuraiMod.assetPath("img/relics/croissant.png");
-    private static final String OUTLINE_PATH = SixSamuraiMod.assetPath("img/relics/outline/croissant.png");
-
-    //    private static final Logger logger = LogManager.getLogger(GatewayOfTheSix.class.getSimpleName());
+    public static final String IMG_PATH = SixSamuraiMod.ModId + "/img/relics/resize/GateWayofSix.png";
+    private static final String OUTLINE_PATH = SixSamuraiMod.ModId + "/img/relics/outline/GateWayofSix.png";
 
     public GatewayOfTheSix() {
-        super(ID, ImageMaster.loadImage(IMG_PATH), ImageMaster.loadImage(OUTLINE_PATH), RelicTier.STARTER,
+        super(ID, ImageMaster.loadImage(IMG_PATH), RelicTier.STARTER,
             AbstractRelic.LandingSound.CLINK);
-        //        logger.info();
     }
 
     @Override
@@ -49,8 +47,7 @@ public class GatewayOfTheSix extends CustomRelic {
     }
 
     @Override
-    public void onTrigger() {
-        // TOdo 触发问题
+    public void onRightClick() {
         if (this.counter >= 4) {
             this.counter -= 4;
             this.addToBot(new RetrieveDrawPileSixSamuraiCardAction(AbstractDungeon.player, 1));
@@ -61,16 +58,6 @@ public class GatewayOfTheSix extends CustomRelic {
     public void onVictory() {
         //在胜利时触发
         this.counter = 0;
-    }
-
-    @Override
-    public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new GatewayOfTheSix();
     }
 
 }

@@ -1,6 +1,5 @@
 package org.mark.card.monster;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -61,12 +60,14 @@ public class LegendarySixSamuraiMizuho extends LegendarySixSamuraiCard {
         } else {
             if (this.costForTurn == 0) {
                 this.updateCost(1);
+                this.isCostModified = false;
             }
         }
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return super.canUse(p, m) && p.hand.group.stream().anyMatch(x -> x.hasTag(CardTag.SixSamurai));
+        return super.canUse(p, m) &&
+            p.hand.group.stream().anyMatch(x -> x.hasTag(CardTag.SixSamurai) && !x.uuid.equals(this.uuid));
     }
 }

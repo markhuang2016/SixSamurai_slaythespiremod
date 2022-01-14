@@ -17,13 +17,9 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.mark.SixSamuraiMod;
-import org.mark.card.*;
 import org.mark.card.magic.*;
 import org.mark.card.monster.*;
-import org.mark.card.trap.DoubleEdgedSwordTechnique;
-import org.mark.card.trap.ReturnOfTheSixSamurai;
-import org.mark.card.trap.SixStrikeThunderBlast;
-import org.mark.card.trap.SixStyleDualWield;
+import org.mark.card.trap.*;
 import org.mark.enums.CardEnum;
 import org.mark.enums.PlayerEnum;
 import org.mark.relic.GatewayOfTheSix;
@@ -93,13 +89,18 @@ public class Shien extends CustomPlayer {
         startingDeck.add(CunningOfTheSixSamurai.ID);
         startingDeck.add(LegendaryEbonSteed.ID);
         startingDeck.add(SecretSkillsOfTheSixSamurai.ID);
+        startingDeck.add(ShiensCastleOfMist.ID);
         startingDeck.add(ShiensSmokeSignal.ID);
         startingDeck.add(SixSamuraiUnited.ID);
         startingDeck.add(SixScrollsOfTheSamurai.ID);
         startingDeck.add(SixStrikeTripleImpact.ID);
+        startingDeck.add(TempleOfTheSix.ID);
 
+        startingDeck.add(GrandMasterOfTheSixSamurai.ID);
         startingDeck.add(GreatShogunShien.ID);
         startingDeck.add(HandOfTheSixSamurai.ID);
+        startingDeck.add(KagemushaOfTheSixSamurai.ID);
+        startingDeck.add(LegendarySecretOfTheSixSamurai.ID);
         startingDeck.add(LegendarySixSamuraiEnishi.ID);
         startingDeck.add(LegendarySixSamuraiKageki.ID);
         startingDeck.add(LegendarySixSamuraiKizan.ID);
@@ -109,11 +110,13 @@ public class Shien extends CustomPlayer {
         startingDeck.add(SecretSixSamuraiFuma.ID);
         startingDeck.add(SecretSixSamuraiGenba.ID);
         startingDeck.add(ShiensChancellorEnishi.ID);
+        startingDeck.add(SpiritOfTheSixSamurai.ID);
 
         startingDeck.add(DoubleEdgedSwordTechnique.ID);
         startingDeck.add(ReturnOfTheSixSamurai.ID);
         startingDeck.add(SixStrikeThunderBlast.ID);
         startingDeck.add(SixStyleDualWield.ID);
+        startingDeck.add(SwiftstrikeArmor.ID);
 
         return startingDeck;
     }
