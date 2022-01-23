@@ -1,12 +1,12 @@
 package org.mark.card.monster;
 
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.SixSamuraiCardInHandFreeUseOnceAction;
+import org.mark.card.LegendarySixSamuraiCard;
 import org.mark.enums.CardTag;
 import org.mark.enums.DamageTypeEnum;
 
@@ -22,6 +22,7 @@ public class LegendarySixSamuraiKageki extends LegendarySixSamuraiCard {
 
     public LegendarySixSamuraiKageki() {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        this.initMonster(3,2,20);
         this.baseDamage = 2;
     }
 

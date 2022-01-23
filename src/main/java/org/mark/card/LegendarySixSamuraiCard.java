@@ -1,4 +1,4 @@
-package org.mark.card.monster;
+package org.mark.card;
 
 import org.mark.enums.CardTag;
 

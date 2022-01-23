@@ -1,4 +1,4 @@
-package org.mark.card.monster;
+package org.mark.card;
 
 import org.mark.enums.CardTag;
 
@@ -7,7 +7,7 @@ import org.mark.enums.CardTag;
  * @author: huangzhiqiang
  * @create: 2022/01/11 14:55
  */
-public abstract class SecretSixSamuraiCard extends SixSamuraiCard{
+public abstract class SecretSixSamuraiCard extends SixSamuraiCard {
 
     public SecretSixSamuraiCard(String id, int cost, CardType cardType,
         CardRarity cardRarity, CardTarget cardTarget) {

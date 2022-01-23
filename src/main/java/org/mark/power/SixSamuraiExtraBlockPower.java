@@ -30,12 +30,13 @@ public class SixSamuraiExtraBlockPower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public int block;
+    private boolean cycle = false;
 
     public SixSamuraiExtraBlockPower(AbstractCreature owner, int block) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = 2;
+        this.amount = 1;
         this.block = block;
         this.description = DESCRIPTIONS[0];
         // TODO 图标
@@ -43,29 +44,27 @@ public class SixSamuraiExtraBlockPower extends AbstractPower {
         this.type = PowerType.BUFF;
     }
 
-
     @Override
-    public float modifyBlock(float blockAmount, AbstractCard card) {
-        // fixme 时机错误
-        if (card.hasTag(CardTag.SixSamurai)) {
-            log.info("额外格挡能力：从六武众卡获取格挡");
-            this.amount--;
-            flash();
-            if (this.amount <= 0) {
-                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-            }
-            return blockAmount + block;
+    public void onGainedBlock(float blockAmount) {
+        // fixme 循环了
+        log.info("额外格挡能力：获取格挡");
+        if (cycle) {
+            log.info("额外格挡能力：获取格挡 递归了，中断");
+            return;
         }
-        return blockAmount;
+        this.addToBot(new GainBlockAction(owner, this.block));
+        this.amount--;
+        flash();
+        if (this.amount <= 0) {
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        } else {
+            cycle = true;
+        }
     }
 
-//    @Override
-//    public void onUseCard(AbstractCard card, UseCardAction action) {
-//        if (card.hasTag(CardTag.SixSamurai) && card.type == AbstractCard.CardType.ATTACK) {
-//            log.info("额外伤害能力：六武众攻击卡已使用");
-//            flash();
-//            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-//        }
-//    }
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        this.cycle = false;
+    }
 
 }

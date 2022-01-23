@@ -34,7 +34,7 @@ public class SixSamuraiExtraDamagePower extends AbstractPower {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = 2;
+        this.amount = 1;
         this.damage = damage;
         this.description = DESCRIPTIONS[0];
         this.loadRegion("vigor");
@@ -42,22 +42,15 @@ public class SixSamuraiExtraDamagePower extends AbstractPower {
     }
 
     @Override
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        if (Objects.equals(type, DamageTypeEnum.SixSamurai)) {
-            return damage + this.damage;
-        }
-        return damage;
-    }
-
-    @Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(CardTag.SixSamurai) && card.type == AbstractCard.CardType.ATTACK) {
-            log.info("额外伤害能力：六武众攻击卡已使用");
+    public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
+        if (Objects.equals(info.type, DamageTypeEnum.SixSamurai)) {
             this.amount--;
             flash();
             if (this.amount <= 0) {
                 addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             }
+            return damageAmount + this.damage;
         }
+        return damageAmount;
     }
 }

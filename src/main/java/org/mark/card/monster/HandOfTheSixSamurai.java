@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.mark.card.SixSamuraiCard;
 
 /**
  * @description: 六武众的先导
@@ -20,8 +21,8 @@ public class HandOfTheSixSamurai extends SixSamuraiCard {
 
     public HandOfTheSixSamurai() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.tags.add(CardTags.STRIKE);
-        this.baseDamage = 10;
+        this.baseDamage = 16;
+        this.initMonster(3, 16, 10);
     }
 
     @Override

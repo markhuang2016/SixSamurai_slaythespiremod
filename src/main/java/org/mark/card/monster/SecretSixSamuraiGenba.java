@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.RetrieveExhaustPileSixSamuraiCardAction;
+import org.mark.card.SecretSixSamuraiCard;
 
 /**
  * @description: 影六武众-玄蕃
@@ -16,7 +17,8 @@ public class SecretSixSamuraiGenba extends SecretSixSamuraiCard {
 
     public SecretSixSamuraiGenba() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-
+        this.initMonster(2, 5, 21);
+        this.tuner = true;
     }
 
     @Override

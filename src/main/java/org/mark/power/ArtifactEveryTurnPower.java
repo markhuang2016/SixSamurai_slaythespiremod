@@ -9,8 +9,10 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Optional;
+
 /**
- * @description: 每回合开始，若无人工制品则，获得一层人工制品
+ * @description: 每回合开始，获得人工制品至层数为 !M! 层。
  * @author: huangzhiqiang
  * @create: 2022/01/10 12:02
  */
@@ -36,6 +38,13 @@ public class ArtifactEveryTurnPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         log.info("powers:{}", owner.powers.stream().map(x -> x.ID).reduce((a, b) -> a + "," + b).orElse(""));
-        addToBot(new ApplyPowerAction(owner, owner, new ArtifactPower(owner, this.amount)));
+        Optional<AbstractPower> powerOptional = owner.powers.stream().filter(x -> x.ID.equals("Artifact")).findAny();
+        if (powerOptional.isPresent()) {
+            AbstractPower artifact = powerOptional.get();
+            // 若层数不足则补充
+            if (artifact.amount < this.amount) {
+                addToBot(new ApplyPowerAction(owner, owner, new ArtifactPower(owner, this.amount - artifact.amount)));
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ package org.mark.card.monster;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.mark.card.SixSamuraiCard;
 import org.mark.power.SixSamuraiExtraBlockPower;
 import org.mark.power.SixSamuraiExtraDamagePower;
 import org.mark.power.SixSamuraiRealDamageDrawCardPower;
@@ -22,6 +23,7 @@ public class SpiritOfTheSixSamurai extends SixSamuraiCard {
         this.baseDamage = 5;
         this.baseBlock = 5;
         initMagicNumber(1);
+        this.initMonster(3,5,5);
     }
 
     @Override
@@ -36,7 +38,9 @@ public class SpiritOfTheSixSamurai extends SixSamuraiCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        this.addToBot(new ApplyPowerAction(p, p, new SixSamuraiExtraDamagePower(p, this.damage),1,true));
+        this.addToBot(new ApplyPowerAction(p, p, new SixSamuraiExtraBlockPower(p, this.block), 1, true));
+        this.addToBot(new ApplyPowerAction(p, p, new SixSamuraiRealDamageDrawCardPower(p, this.magicNumber), 1, true));
         this.addToBot(
             new ApplyPowerAction(p, p, new SpiritOfTheSixSamuraiPower(p, this.damage, this.block, this.magicNumber, 1),
                 1,

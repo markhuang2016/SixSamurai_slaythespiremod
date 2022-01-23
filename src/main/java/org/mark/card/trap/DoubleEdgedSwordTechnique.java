@@ -16,6 +16,7 @@ public class DoubleEdgedSwordTechnique extends AbstractSixSamuraiCard {
     public static final String ID = DoubleEdgedSwordTechnique.class.getSimpleName();
 
     public DoubleEdgedSwordTechnique() {
+        // TODO 商店价格过高
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;

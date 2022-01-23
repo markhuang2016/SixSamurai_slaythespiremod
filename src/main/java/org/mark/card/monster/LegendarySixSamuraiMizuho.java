@@ -1,12 +1,15 @@
 package org.mark.card.monster;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.DiscardSixSamuraiCardAction;
 import org.mark.action.KillMinionAction;
+import org.mark.card.LegendarySixSamuraiCard;
 import org.mark.enums.CardTag;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -20,27 +23,24 @@ public class LegendarySixSamuraiMizuho extends LegendarySixSamuraiCard {
     public static final String ID = LegendarySixSamuraiMizuho.class.getSimpleName();
 
     public LegendarySixSamuraiMizuho() {
+        this(true);
+    }
+
+    public LegendarySixSamuraiMizuho(boolean completed) {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         this.tags.add(CardTags.STRIKE);
         this.baseDamage = 16;
+        this.initMonster(3, 16, 10);
+        if (completed) {
+            this.cardsToPreview = new LegendarySixSamuraiShinai(false);
+        }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DiscardSixSamuraiCardAction(p, 1));
         this.addToBot(new KillMinionAction(p, m, this.damage));
-        refresh();
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        refresh();
-    }
-
-    @Override
-    public void onMoveToDiscard() {
-        refresh();
+        this.temporaryFree = false;
     }
 
     @Override
@@ -51,23 +51,15 @@ public class LegendarySixSamuraiMizuho extends LegendarySixSamuraiCard {
         }
     }
 
-    public void refresh() {
-        if (AbstractDungeon.player.hand.group.stream()
-            .filter(x -> Objects.equals(x.cardID, LegendarySixSamuraiShinai.ID)).count() > 0) {
-            if (this.costForTurn == 1) {
-                this.updateCost(-1);
-            }
-        } else {
-            if (this.costForTurn == 0) {
-                this.updateCost(1);
-                this.isCostModified = false;
-            }
-        }
-    }
-
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return super.canUse(p, m) &&
             p.hand.group.stream().anyMatch(x -> x.hasTag(CardTag.SixSamurai) && !x.uuid.equals(this.uuid));
+    }
+
+    @Override
+    protected boolean isTemporaryFree(ArrayList<AbstractCard> handCards) {
+        return handCards.stream()
+            .filter(x -> Objects.equals(x.cardID, LegendarySixSamuraiShinai.ID)).count() > 0;
     }
 }

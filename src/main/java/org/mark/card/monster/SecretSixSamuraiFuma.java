@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.RetrieveDrawPileSixSamuraiCardAction;
+import org.mark.card.SecretSixSamuraiCard;
 
 /**
  * @description: 影六武众-风魔
@@ -20,6 +21,8 @@ public class SecretSixSamuraiFuma extends SecretSixSamuraiCard {
     public SecretSixSamuraiFuma() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseBlock = 12;
+        this.initMonster(1, 2, 18);
+        this.tuner = true;
     }
 
     @Override

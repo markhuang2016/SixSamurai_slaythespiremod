@@ -1,0 +1,152 @@
+{
+  "StrikeShien": {
+    "NAME": "紫炎打击",
+    "DESCRIPTION": "造成 !D! 点紫炎伤害。"
+  },
+  "CunningOfTheSixSamurai": {
+    "NAME": "六武众之理",
+    "DESCRIPTION": "丢弃手牌里的一张 SixSamurai:六武众 卡，选择弃牌堆里一张 SixSamurai:六武众 卡回到手牌"
+  },
+  "GatewayOfTheSixOne": {
+    "NAME": "六武之门-壹式",
+    "DESCRIPTION": "从六武之门上移除 !M! 个武士道指示物，下一次 six_samurai:六武众 卡牌造成伤害时额外造成 !D! 点。"
+  },
+  "GatewayOfTheSixTwo": {
+    "NAME": "六武之门-贰式",
+    "DESCRIPTION": "从六武之门上移除 !M! 个武士道指示物，从抽牌堆和弃牌堆中选择一张 six_samurai:六武众 或 six_samurai:紫炎 卡加入手牌"
+  },
+  "GatewayOfTheSixThree": {
+    "NAME": "六武之门-叁式",
+    "DESCRIPTION": "从六武之门上移除 !M! 个武士道指示物，从弃牌堆选择一张 SixSamurai:紫炎 卡，此卡回到手牌且下次使用不消耗能量。"
+  },
+  "LegendaryEbonSteed": {
+    "NAME": "漆黑的名马",
+    "DESCRIPTION": "获取 !M! 点 力量 和 敏捷 。"
+  },
+  "SecretSkillsOfTheSixSamurai": {
+    "NAME": "六武众的影忍术",
+    "DESCRIPTION": "丢弃一张 SixSamurai:六武众 卡牌，从消耗牌堆选一张 six_samurai:六武众 卡拿到手牌"
+  },
+  "ShiensCastleOfMist": {
+    "NAME": "紫炎的霞城",
+    "DESCRIPTION": "所有敌方降低 !M! 点力量"
+  },
+  "ShiensDojo": {
+    "NAME": "紫炎的道场",
+    "DESCRIPTION": "获取一个临时遗物 紫炎的道场 。"
+  },
+  "ShiensSmokeSignal": {
+    "NAME": "紫炎的狼烟",
+    "DESCRIPTION": "从抽牌堆里选择 !M! 张 六武众 卡牌加入手牌"
+  },
+  "SixSamuraiUnited": {
+    "NAME": "六武众的团结",
+    "DESCRIPTION": "获取一张 *六武众的团结-已发动 ，替换 。",
+    "UPGRADE_DESCRIPTION": " 获取一张升级的 *六武众的团结-已发动 ，替换 。"
+  },
+  "SixSamuraiUnitedActivated": {
+    "NAME": "六武众的团结-已发动",
+    "DESCRIPTION": " 保留 。抽X张卡，每使用一张 SixSamurai:六武众 卡牌可抽一张，最多抽 !M! 张卡",
+    "EXTENDED_DESCRIPTION": [
+      " NL （你可抽",
+      " 张牌。）"
+    ]
+  },
+  "SixScrollsOfTheSamurai": {
+    "NAME": "六武之书",
+    "DESCRIPTION": "丢弃 !M! 张 SixSamurai:六武众 卡，把抽牌堆的一张 *大将军紫炎 加入手牌"
+  },
+  "SixStrikeTripleImpact": {
+    "NAME": "六武式三段冲",
+    "DESCRIPTION": "对全部敌人造成 !D! 点伤害，若敌人为 爪牙 ，击杀"
+  },
+  "TempleOfTheSix": {
+    "NAME": "六武院",
+    "DESCRIPTION": "每使用一张 SixSamurai:六武众 卡，敌方降低 !M! 点力量"
+  },
+  "GrandMasterOfTheSixSamurai": {
+    "NAME": "六武众的师范",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若手牌中有此卡以外的 SixSamurai:六武众 卡牌，此卡不消耗 [G] 。"
+  },
+  "GreatShogunShien": {
+    "NAME": "大将军紫炎",
+    "DESCRIPTION": "造成 !D! 点伤害。若手牌有两张及以上的 SixSamurai:六武众 卡牌时，此卡不消耗能量"
+  },
+  "HandOfTheSixSamurai": {
+    "NAME": "六武众的先导",
+    "DESCRIPTION": "丢弃一张卡，造成 !D! 点伤害"
+  },
+  "KagemushaOfTheSixSamurai": {
+    "NAME": "六武众的影武者",
+    "DESCRIPTION": "获得 !B! 点格挡"
+  },
+  "LegendarySecretOfTheSixSamurai": {
+    "NAME": "六武众的真影",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 若有 SixSamurai:影六武众 卡牌使用后，此卡使用不消耗 [G] 。"
+  },
+  "LegendarySixSamuraiEnishi": {
+    "NAME": "真六武众-缘",
+    "DESCRIPTION": "消耗弃牌堆 !M! 张卡，目标获得 眩晕"
+  },
+  "LegendarySixSamuraiKageki": {
+    "NAME": "真六武众-阴鬼",
+    "DESCRIPTION": "造成 !D! 点伤害，若手牌中除 *真六武众-阴鬼 外的 SixSamurai:六武众 卡牌，伤害增加15点。NL 打出后可选择手牌中的一张 SixSamurai:六武众 卡牌，此卡下一次打出时不消耗 [G] "
+  },
+  "LegendarySixSamuraiKizan": {
+    "NAME": "真六武众-辉斩",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若除此卡外手牌有 SixSamurai:六武众 卡，这张卡不消耗 [G]。 NL 若除此卡外手牌有两张及以上 SixSamurai:六武众 卡，这张卡额外造成3点伤害。 "
+  },
+  "LegendarySixSamuraiMizuho": {
+    "NAME": "真六武众-瑞穗",
+    "DESCRIPTION": "丢弃一张 SixSamurai:六武众 牌，对目标造成 !D! 点伤害，若目标为 爪牙 ，击杀。 NL 若手牌中有 *真六武众-竹刀 ,此卡不消耗 [G]"
+  },
+  "LegendarySixSamuraiShien": {
+    "NAME": "真六武众-紫炎",
+    "DESCRIPTION": "丢弃两张 SixSamurai:六武众 牌，每回合免疫一次负面效果"
+  },
+  "LegendarySixSamuraiShinai": {
+    "NAME": "真六武众-竹刀",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若手牌中有 *真六武众-瑞穗 ，此卡不消耗 [G] 。 NL 被丢弃时从墓地选一张 SixSamurai:六武众 牌。"
+  },
+  "SecretSixSamuraiFuma": {
+    "NAME": "影六武众-风魔",
+    "DESCRIPTION": "获取 !B! 点格挡。 NL 被丢弃到弃牌堆时，可以从抽牌堆选此卡以外的 SixSamurai:六武众 卡加入手牌"
+  },
+  "SecretSixSamuraiGenba": {
+    "NAME": "影六武众-玄蕃",
+    "DESCRIPTION": "从消耗牌堆选一张 SixSamurai:六武众 卡拿到手牌"
+  },
+  "ShiensChancellorEnishi": {
+    "NAME": "紫炎之老中 缘",
+    "DESCRIPTION": " 紫炎 。消耗 !M! 张弃牌堆中的 SixSamurai:六武众 卡牌，造成 !D!点伤害，若目标为 爪牙 ，击杀"
+  },
+  "SpiritOfTheSixSamurai": {
+    "NAME": "六武众的御灵代",
+    "DESCRIPTION": "使用时和使用后每回合开始时获得一层 六武众力量、六武众敏捷，六武众攫取"
+  },
+  "DoubleEdgedSwordTechnique": {
+    "NAME": "诸刃之活人剑术",
+    "DESCRIPTION": "从弃牌堆中选择 !M! 张 SixSamurai:六武众 卡牌加入手牌"
+  },
+  "ReturnOfTheSixSamurai": {
+    "NAME": "六武众推参！",
+    "DESCRIPTION": "从弃牌堆中选择 !M! 张 SixSamurai:六武众 卡牌加入手牌"
+  },
+  "SixStrikeThunderBlast": {
+    "NAME": "六武式风雷斩",
+    "DESCRIPTION": "移除 !M! 个 六武之门 的 武士道指示物，若目标为爪牙，击杀; NL 若目标非爪牙， 击晕"
+  },
+  "SixStyleDualWield": {
+    "NAME": "六武派二刀流",
+    "DESCRIPTION": "击晕随机两只怪物",
+    "UPGRADE_DESCRIPTION": "击晕全部怪物"
+  },
+  "SwiftstrikeArmor": {
+    "NAME": "神速之具足",
+    "DESCRIPTION": "每回合抽卡后额外抽 !M! 张卡，若抽到的是 SixSamurai:六武众 卡，此卡下次使用不消耗 [G] 。"
+  },
+  "DefendShien": {
+    "NAME": "紫炎防御",
+    "DESCRIPTION": "获得 !B! 点紫炎格挡。"
+  }
+}

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.ExhaustDiscardPileSixSamuraiCardAction;
+import org.mark.card.LegendarySixSamuraiCard;
 import org.mark.enums.CardTag;
 
 /**
@@ -20,6 +21,7 @@ public class LegendarySixSamuraiEnishi extends LegendarySixSamuraiCard {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
+        this.initMonster(4,17,7);
     }
 
     @Override

@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mark.action.SwiftstrikeArmorFollowUpAction;
+import org.mark.enums.CardTag;
 
 /**
  * @description: 神速之具足能力
@@ -22,7 +24,6 @@ public class SwiftstrikeArmorPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public boolean open = false;
 
     public SwiftstrikeArmorPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -36,19 +37,6 @@ public class SwiftstrikeArmorPower extends AbstractPower {
 
     @Override
     public void atStartOfTurnPostDraw() {
-        // fixme 第一张0非
-        this.addToTop(new DrawCardAction(this.owner, this.amount));
-        this.open = true;
-        log.info("神速之具足：能力开启，即将抽牌");
-    }
-
-    @Override
-    public void onCardDraw(AbstractCard card) {
-        log.info("神速之具足：抽卡，能力开启:{}", open);
-        if (open) {
-            card.freeToPlayOnce = true;
-            log.info("神速之具足：能力即将关闭");
-            open = false;
-        }
+        this.addToBot(new DrawCardAction(this.amount, new SwiftstrikeArmorFollowUpAction()));
     }
 }

@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.mark.card.SixSamuraiCard;
 import org.mark.enums.CardTag;
 
 /**
@@ -11,13 +12,14 @@ import org.mark.enums.CardTag;
  * @author: huangzhiqiang
  * @create: 2022/01/08 09:51
  */
-public class LegendarySecretOfTheSixSamurai extends SixSamuraiCard{
+public class LegendarySecretOfTheSixSamurai extends SixSamuraiCard {
 
     public static final String ID = LegendarySecretOfTheSixSamurai.class.getSimpleName();
 
     public LegendarySecretOfTheSixSamurai() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.SELF);
         this.baseBlock = 20;
+        this.initMonster(4, 5, 20);
     }
 
     @Override
@@ -32,22 +34,21 @@ public class LegendarySecretOfTheSixSamurai extends SixSamuraiCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
         // 获得 !B! 点格挡。 NL 若有 影六武众 卡牌使用后，此卡使用不消耗 [G] 。
         this.addToBot(new GainBlockAction(p, this.block));
+        this.temporaryFree = false;
     }
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         super.triggerOnOtherCardPlayed(c);
         if (c.hasTag(CardTag.SecretSixSamurai) && !this.freeToPlayOnce) {
-            this.freeToPlayOnce = true;
+            this.temporaryFree = true;
         }
     }
 
     @Override
     public void onMoveToDiscard() {
         super.onMoveToDiscard();
-        if (this.freeToPlayOnce) {
-            this.freeToPlayOnce = false;
-        }
+        this.temporaryFree = false;
     }
 
     // TODO

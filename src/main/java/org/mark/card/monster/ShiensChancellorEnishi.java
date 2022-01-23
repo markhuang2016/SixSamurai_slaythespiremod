@@ -1,13 +1,11 @@
 package org.mark.card.monster;
 
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.ExhaustDiscardPileSixSamuraiCardAction;
 import org.mark.action.KillMinionAction;
-import org.mark.card.AbstractSixSamuraiCard;
+import org.mark.card.ShiensCard;
 import org.mark.enums.CardTag;
 
 /**
@@ -15,7 +13,7 @@ import org.mark.enums.CardTag;
  * @author: huangzhiqiang
  * @create: 2022/01/06 11:27
  */
-public class ShiensChancellorEnishi extends AbstractSixSamuraiCard {
+public class ShiensChancellorEnishi extends ShiensCard {
 
     public static final String ID = ShiensChancellorEnishi.class.getSimpleName();
 
@@ -24,6 +22,7 @@ public class ShiensChancellorEnishi extends AbstractSixSamuraiCard {
         this.baseDamage = 22;
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
+        this.initMonster(6, 22, 12);
     }
 
     @Override

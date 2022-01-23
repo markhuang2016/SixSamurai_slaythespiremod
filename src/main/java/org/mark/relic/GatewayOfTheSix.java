@@ -1,15 +1,20 @@
 package org.mark.relic;
 
+import basemod.abstracts.CustomRelic;
+import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.mark.SixSamuraiMod;
-import org.mark.action.RetrieveDrawPileSixSamuraiCardAction;
+import org.mark.card.optional.GatewayOfTheSixOne;
+import org.mark.card.optional.GatewayOfTheSixThree;
+import org.mark.card.optional.GatewayOfTheSixTwo;
 import org.mark.enums.CardTag;
+
+import java.util.ArrayList;
 
 /**
  * @description: 六武之门
@@ -21,15 +26,17 @@ import org.mark.enums.CardTag;
  * @author: huangzhiqiang
  * @create: 2021/12/27 17:59
  */
-public class GatewayOfTheSix extends AbstractRightClickRelic {
+public class GatewayOfTheSix extends CustomRelic implements ClickableRelic {
 
     public static final String ID = GatewayOfTheSix.class.getSimpleName();
     // TODO 图片
-    public static final String IMG_PATH = SixSamuraiMod.ModId + "/img/relics/resize/GateWayofSix.png";
-    private static final String OUTLINE_PATH = SixSamuraiMod.ModId + "/img/relics/outline/GateWayofSix.png";
+    public static final String IMG_PATH = SixSamuraiMod.ModId + "/img/relics/dest/GatewayOfTheSix.png";
+    private static final String OUTLINE_PATH = SixSamuraiMod.ModId + "/img/relics/outline/背景.png";
 
     public GatewayOfTheSix() {
-        super(ID, ImageMaster.loadImage(IMG_PATH), RelicTier.STARTER,
+        super(ID, ImageMaster.loadImage(IMG_PATH),
+            ImageMaster.loadImage(OUTLINE_PATH),
+            RelicTier.STARTER,
             AbstractRelic.LandingSound.CLINK);
     }
 
@@ -40,7 +47,7 @@ public class GatewayOfTheSix extends AbstractRightClickRelic {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        // 使用六武众卡时获得2个指示物
+        // 使用 六武众 卡时获得2个武士道指示物，右键触发移除 2、4、6个指示物时，可以选择使用 六武之门-壹式、六武之门-贰式、六武之门-叁式
         if (card.hasTag(CardTag.SixSamurai)) {
             this.counter += 2;
         }
@@ -48,10 +55,19 @@ public class GatewayOfTheSix extends AbstractRightClickRelic {
 
     @Override
     public void onRightClick() {
-        if (this.counter >= 4) {
-            this.counter -= 4;
-            this.addToBot(new RetrieveDrawPileSixSamuraiCardAction(AbstractDungeon.player, 1));
+        if (this.counter < 2) {
+            return;
         }
+        InputHelper.moveCursorToNeutralPosition();
+        ArrayList<AbstractCard> choices = new ArrayList<>();
+        choices.add(new GatewayOfTheSixOne());
+        if (this.counter >= 4) {
+            choices.add(new GatewayOfTheSixTwo());
+        }
+        if (this.counter >= 6) {
+            choices.add(new GatewayOfTheSixThree());
+        }
+        addToBot(new ChooseOneAction(choices));
     }
 
     @Override

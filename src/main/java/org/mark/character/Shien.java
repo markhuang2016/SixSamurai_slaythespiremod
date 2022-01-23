@@ -15,13 +15,14 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.mark.SixSamuraiMod;
+import org.mark.card.monster.SecretSixSamuraiFuma;
 import org.mark.card.magic.*;
 import org.mark.card.monster.*;
 import org.mark.card.trap.*;
 import org.mark.enums.CardEnum;
 import org.mark.enums.PlayerEnum;
+import org.mark.modules.EnergyOrbShion;
 import org.mark.relic.GatewayOfTheSix;
 
 import java.util.ArrayList;
@@ -72,7 +73,7 @@ public class Shien extends CustomPlayer {
 
     public Shien(String name) {
         //构造方法，初始化参数
-        super(name, PlayerEnum.Shien, ORB_TEXTURES, ORB_VFX, LAYER_SPEED, (String)null, (String)null);
+        super(name, PlayerEnum.Shien, new EnergyOrbShion(ORB_TEXTURES, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String)null, (String)null);
         this.dialogX = this.drawX + 0.0F * Settings.scale;
         this.dialogY = this.drawY + 220.0F * Settings.scale;
         initializeClass(STAND, SHOULDER_2, SHOULDER_1, CORPSE,
@@ -86,37 +87,38 @@ public class Shien extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> startingDeck = new ArrayList<>();
-        startingDeck.add(CunningOfTheSixSamurai.ID);
-        startingDeck.add(LegendaryEbonSteed.ID);
-        startingDeck.add(SecretSkillsOfTheSixSamurai.ID);
-        startingDeck.add(ShiensCastleOfMist.ID);
+//        startingDeck.add(CunningOfTheSixSamurai.ID);
+//        startingDeck.add(LegendaryEbonSteed.ID);
+//        startingDeck.add(SecretSkillsOfTheSixSamurai.ID);
+//        startingDeck.add(ShiensCastleOfMist.ID);
+        startingDeck.add(ShiensDojo.ID);
         startingDeck.add(ShiensSmokeSignal.ID);
         startingDeck.add(SixSamuraiUnited.ID);
-        startingDeck.add(SixScrollsOfTheSamurai.ID);
-        startingDeck.add(SixStrikeTripleImpact.ID);
-        startingDeck.add(TempleOfTheSix.ID);
+//        startingDeck.add(SixScrollsOfTheSamurai.ID);
+//        startingDeck.add(SixStrikeTripleImpact.ID);
+//        startingDeck.add(TempleOfTheSix.ID);
 
-        startingDeck.add(GrandMasterOfTheSixSamurai.ID);
-        startingDeck.add(GreatShogunShien.ID);
-        startingDeck.add(HandOfTheSixSamurai.ID);
+//        startingDeck.add(GrandMasterOfTheSixSamurai.ID);
+//        startingDeck.add(GreatShogunShien.ID);
+//        startingDeck.add(HandOfTheSixSamurai.ID);
         startingDeck.add(KagemushaOfTheSixSamurai.ID);
-        startingDeck.add(LegendarySecretOfTheSixSamurai.ID);
+//        startingDeck.add(LegendarySecretOfTheSixSamurai.ID);
         startingDeck.add(LegendarySixSamuraiEnishi.ID);
         startingDeck.add(LegendarySixSamuraiKageki.ID);
-        startingDeck.add(LegendarySixSamuraiKizan.ID);
+//        startingDeck.add(LegendarySixSamuraiKizan.ID);
         startingDeck.add(LegendarySixSamuraiMizuho.ID);
-        startingDeck.add(LegendarySixSamuraiShien.ID);
+//        startingDeck.add(LegendarySixSamuraiShien.ID);
         startingDeck.add(LegendarySixSamuraiShinai.ID);
         startingDeck.add(SecretSixSamuraiFuma.ID);
-        startingDeck.add(SecretSixSamuraiGenba.ID);
-        startingDeck.add(ShiensChancellorEnishi.ID);
+//        startingDeck.add(SecretSixSamuraiGenba.ID);
+//        startingDeck.add(ShiensChancellorEnishi.ID);
         startingDeck.add(SpiritOfTheSixSamurai.ID);
 
-        startingDeck.add(DoubleEdgedSwordTechnique.ID);
-        startingDeck.add(ReturnOfTheSixSamurai.ID);
-        startingDeck.add(SixStrikeThunderBlast.ID);
-        startingDeck.add(SixStyleDualWield.ID);
-        startingDeck.add(SwiftstrikeArmor.ID);
+//        startingDeck.add(DoubleEdgedSwordTechnique.ID);
+//        startingDeck.add(ReturnOfTheSixSamurai.ID);
+//        startingDeck.add(SixStrikeThunderBlast.ID);
+//        startingDeck.add(SixStyleDualWield.ID);
+//        startingDeck.add(SwiftstrikeArmor.ID);
 
         return startingDeck;
     }
@@ -125,7 +127,6 @@ public class Shien extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> startingRelics = new ArrayList<>();
         startingRelics.add(GatewayOfTheSix.ID);
-        UnlockTracker.markRelicAsSeen(GatewayOfTheSix.ID);
         return startingRelics;
     }
 

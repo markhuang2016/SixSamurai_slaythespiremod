@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 public class CardTag {
 
     @SpireEnum
+    public static AbstractCard.CardTags Shien;
+    @SpireEnum
     public static AbstractCard.CardTags SixSamurai;
     @SpireEnum
     public static AbstractCard.CardTags LegendarySixSamurai;

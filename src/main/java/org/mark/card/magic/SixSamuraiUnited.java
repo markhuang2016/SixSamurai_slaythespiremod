@@ -1,15 +1,12 @@
 package org.mark.card.magic;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.mark.card.AbstractSixSamuraiCard;
-import org.mark.card.monster.SixSamuraiCard;
-import org.mark.enums.CardTag;
+import org.mark.card.temporary.SixSamuraiUnitedActivated;
 
 /**
  * @description: 六武众的团结
@@ -20,73 +17,31 @@ public class SixSamuraiUnited extends AbstractSixSamuraiCard {
 
     public static final String ID = SixSamuraiUnited.class.getSimpleName();
 
-    public static final String RawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
-
-    public static final String[] ExtendedDescription =
-        CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
-
-    private Logger log = LogManager.getLogger(ID);
-
-    private int drawNumber = 0;
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public SixSamuraiUnited() {
         super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
+        this.initMagicNumber(2);
+        this.purgeOnUse = true;
+        this.cardsToPreview = new SixSamuraiUnitedActivated(this.magicNumber, this.upgraded, this);
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
             this.upgradeMagicNumber(1);
+            this.cardsToPreview = new SixSamuraiUnitedActivated(this.magicNumber, true, this);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 每使用一张 六武众 卡 ，抽一张牌 ，最多 !M! 张
-        this.addToBot(new DrawCardAction(p, this.drawNumber));
-        refresh();
-    }
-
-    @Override
-    public AbstractCard makeCopy() {
-        return new SixSamuraiUnited();
-    }
-
-    @Override
-    public void triggerOnOtherCardPlayed(AbstractCard c) {
-        log.debug(
-            c.cardID + "被使用了,tags:" + c.tags.stream().map(x -> x.name()).reduce((a, b) -> a + "," + b).orElse(""));
-
-        if (c.hasTag(CardTag.SixSamurai)) {
-            this.drawNumber++;
-        }
-        if (this.drawNumber > this.baseMagicNumber) {
-            this.drawNumber = magicNumber;
-        }
-        log.debug("drawNumber:" + drawNumber);
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-
-        this.rawDescription = RawDescription + ExtendedDescription[0] + drawNumber + ExtendedDescription[1];
-
-        this.initializeDescription();
-    }
-
-    @Override
-    public void onMoveToDiscard() {
-        refresh();
-    }
-
-    private void refresh(){
-        drawNumber = 0;
-        this.rawDescription = RawDescription;
-        this.initializeDescription();
+        // 获取一张 六武众的团结-已发动 ，替换 。
+        // 获取一张 六武众的团结-已发动+ ，替换 。
+        this.addToBot(new MakeTempCardInHandAction(new SixSamuraiUnitedActivated(this.baseMagicNumber, this.upgraded, this), 1));
     }
 
 }

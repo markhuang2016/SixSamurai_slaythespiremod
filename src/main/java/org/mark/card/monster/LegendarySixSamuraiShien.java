@@ -1,10 +1,10 @@
 package org.mark.card.monster;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.action.DiscardSixSamuraiCardAction;
+import org.mark.card.LegendarySixSamuraiCard;
 import org.mark.enums.CardTag;
 import org.mark.power.ArtifactEveryTurnPower;
 
@@ -19,6 +19,8 @@ public class LegendarySixSamuraiShien extends LegendarySixSamuraiCard {
 
     public LegendarySixSamuraiShien() {
         super(ID, 0, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        this.initMonster(5,25,14);
+        this.synchro = true;
     }
 
 
@@ -30,7 +32,6 @@ public class LegendarySixSamuraiShien extends LegendarySixSamuraiCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DiscardSixSamuraiCardAction(p, 2));
-        // TODO 每回合获取 免疫Debuff 一次
         this.addToBot(new ApplyPowerAction(p, p, new ArtifactEveryTurnPower(p)));
     }
 

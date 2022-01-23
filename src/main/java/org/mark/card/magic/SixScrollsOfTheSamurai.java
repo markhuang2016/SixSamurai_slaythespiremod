@@ -22,6 +22,7 @@ public class SixScrollsOfTheSamurai extends AbstractSixSamuraiCard {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
+        this.cardsToPreview = new GreatShogunShien();
     }
 
     @Override

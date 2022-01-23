@@ -59,6 +59,14 @@
     </dependency>
 
     <dependency>
+      <groupId>com.evacipated.cardcrawl.mod</groupId>
+      <artifactId>VUPShionMod</artifactId>
+      <version>1.21.3</version>
+      <scope>system</scope>
+      <systemPath>${Steam.path}/workshop/content/646570/2568224579/VUPShionMod.jar</systemPath>
+    </dependency>
+
+    <dependency>
       <groupId>net.coobird</groupId>
       <artifactId>thumbnailator</artifactId>
       <version>0.4.8</version>

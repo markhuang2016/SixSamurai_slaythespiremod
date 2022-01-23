@@ -1,4 +1,4 @@
-package org.mark.util;
+package org.mark.demo;
 
 import net.coobird.thumbnailator.Thumbnails;
 import org.apache.commons.lang3.StringUtils;
@@ -17,6 +17,11 @@ import java.io.IOException;
 public class ImageUtil {
 
     public static void main(String[] args) throws IOException {
+        //        refreshCardsImage();
+        refreshRelicImage();
+    }
+
+    public static void refreshRelicImage() throws IOException {
         final String resourceDir =
             "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/relics/";
         final String resizeDir =
@@ -25,12 +30,33 @@ public class ImageUtil {
             "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/relics/outline/";
         final String templateImagePath =
             "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/relics/template.png";
+        final String outlineImagePath =
+            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/relics/outline/template.png";
         File templateImage = new File(templateImagePath);
         if (!templateImage.exists()) {
             templateImage.createNewFile();
         }
 
-        ImageIO.write(new BufferedImage(128, 128, BufferedImage.TYPE_INT_BGR), "png", templateImage);
+        File outlineImage = new File(outlineImagePath);
+        if (!outlineImage.exists()) {
+            outlineImage.createNewFile();
+        }
+        BufferedImage template = new BufferedImage(128, 128, BufferedImage.TYPE_INT_BGR);
+        Graphics2D g = template.createGraphics();
+        g.setColor(Color.RED);
+        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_ATOP, 0.0F));
+
+        g.fillRect(34, 34, 60, 60);
+        g.dispose();
+        ImageIO.write(template, "png", templateImage);
+
+        BufferedImage outline = new BufferedImage(128, 128, BufferedImage.TYPE_INT_BGR);
+        Graphics2D graphics = outline.createGraphics();
+        graphics.setColor(Color.white);
+        graphics.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_ATOP, 1.0F));
+        graphics.fillRect(34, 34, 60, 60);
+        graphics.dispose();
+        ImageIO.write(outline, "png", outlineImage);
 
         File resDir = new File(resourceDir);
         File destDir = new File(destinationDir);
@@ -60,21 +86,9 @@ public class ImageUtil {
             if (!destFile.exists()) {
                 destFile.createNewFile();
             }
-            ImageUtil.resizeImage(file.getPath(), resizeDir + name, 120, 120, true);
-            ImageUtil.mergeImages(templateImagePath, resizeDir + name, 4, 4, destFile.getPath(), "png", false);
+            ImageUtil.resizeImage(file.getPath(), resizeDir + name, 60, 60, true);
+            ImageUtil.mergeImages(templateImagePath, resizeDir + name, 34, 34, destFile.getPath(), "png", false);
         }
-
-        //        String resource =
-        //            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/CunningOfTheSixSamurai.png";
-        //        String dest =
-        //            "/Users/mark/IdeaProjects/SixSamurai/src/main/resources/SixSamurai/img/cards/resize/CunningOfTheSixSamurai.png";
-        //        File file = new File(dest);
-        //        if (!file.exists()) {
-        //            file.createNewFile();
-        //        }
-        //
-        //        resizeImage(resource, dest, 380, 380, false);
-
     }
 
     public static void refreshCardsImage() throws IOException {
