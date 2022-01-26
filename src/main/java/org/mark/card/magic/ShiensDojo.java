@@ -16,7 +16,7 @@ public class ShiensDojo extends AbstractSixSamuraiCard {
 
     public ShiensDojo() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        this.exhaust = true;
+        this.purgeOnUse = true;
     }
 
     @Override
@@ -32,8 +32,5 @@ public class ShiensDojo extends AbstractSixSamuraiCard {
         // 获取一个临时遗物 紫炎的道场 。 消耗 ，当遗物使用后，此卡会回到弃牌堆。
         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(0, 0, new org.mark.relic.ShiensDojo(this));
     }
-    // TODO
-    //①：每次「六武众」怪兽召唤·特殊召唤给这张卡放置1个武士道指示物。
-    //②：把有武士道指示物放置的这张卡送去墓地才能发动。把持有这张卡放置的武士道指示物数量以下的等级的1只「六武众」效果怪兽或者「紫炎」效果怪兽从卡组特殊召唤。
 
 }

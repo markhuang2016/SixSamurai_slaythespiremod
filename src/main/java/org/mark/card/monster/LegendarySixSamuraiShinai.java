@@ -59,7 +59,7 @@ public class LegendarySixSamuraiShinai extends LegendarySixSamuraiCard {
     @Override
     public void triggerOnManualDiscard() {
         log.info("竹刀被丢弃了");
-        this.addToBot(new RetrieveDiscardPileSixSamuraiCardAction(AbstractDungeon.player, 1));
+        this.addToTop(new RetrieveDiscardPileSixSamuraiCardAction(AbstractDungeon.player, 1));
     }
 
     @Override

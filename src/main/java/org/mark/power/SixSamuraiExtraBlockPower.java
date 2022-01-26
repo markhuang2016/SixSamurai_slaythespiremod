@@ -46,7 +46,6 @@ public class SixSamuraiExtraBlockPower extends AbstractPower {
 
     @Override
     public void onGainedBlock(float blockAmount) {
-        // fixme 循环了
         log.info("额外格挡能力：获取格挡");
         if (cycle) {
             log.info("额外格挡能力：获取格挡 递归了，中断");
@@ -56,10 +55,9 @@ public class SixSamuraiExtraBlockPower extends AbstractPower {
         this.amount--;
         flash();
         if (this.amount <= 0) {
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-        } else {
-            cycle = true;
+            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
+        cycle = true;
     }
 
     @Override

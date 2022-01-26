@@ -46,9 +46,7 @@ public class SixSamuraiCardInHandFreeUseOnceAction extends AbstractGameAction {
         this.addToBot(new SelectCardsInHandAction(this.amount, TEXT[0], x -> x.hasTag(CardTag.SixSamurai),
             cards -> {
                 cards.forEach(card -> {
-                    if (card.cost > 0) {
                         card.freeToPlayOnce = true;
-                    }
                 });
             }));
         this.isDone = true;

@@ -19,7 +19,6 @@ public class ShiensDojo extends TemporaryRelic {
 
     public static final String ID = ShiensDojo.class.getSimpleName();
 
-    // TODO 图片
     public static final String IMG_PATH = SixSamuraiMod.ModId + "/img/relics/dest/ShiensDojo.png";
     private static final String OUTLINE_PATH = SixSamuraiMod.ModId + "/img/relics/outline/背景.png";
 
@@ -45,6 +44,6 @@ public class ShiensDojo extends TemporaryRelic {
         this.addToBot(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.drawPile,
             x -> (x.hasTag(CardTag.SixSamurai) || x.hasTag(CardTag.Shien)) && ((MonsterCard) x).star <= this.counter,
             1,
-            null));
+            cards -> cards.forEach(x -> x.freeToPlayOnce = true)));
     }
 }

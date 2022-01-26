@@ -204,30 +204,21 @@ public class SixSamuraiMod implements RelicGetSubscriber, PostPowerApplySubscrib
             loadLocKeywords(language);
         }
 
-        String keyword = "六武众";
+        logKeyword("六武众");
+        logKeyword("SixSamurai:六武众");
+        logKeyword("six_samurai:六武众");
+    }
+
+    private void logKeyword(String keyword) {
+        logger.info("keyword:{}", keyword);
         try {
-            // TODO 关键词
-//            logger.info("{} getKeywordTitle:{}", keyword, BaseMod.getKeywordTitle(keyword));
-            logger.info("{} getKeywordDescription:{}", keyword, BaseMod.getKeywordDescription(keyword));
-            logger.info("{} getKeywordPrefix:{}", keyword, BaseMod.getKeywordPrefix(keyword));
-            logger.info("{} getKeywordProper:{}", keyword, BaseMod.getKeywordProper(keyword));
-            logger.info("{} getKeywordUnique:{}", keyword, BaseMod.getKeywordUnique(keyword));
-
-            keyword = "SixSamurai:六武众";
-//            logger.info("{} getKeywordTitle:{}", keyword, BaseMod.getKeywordTitle(keyword));
-            logger.info("{} getKeywordDescription:{}", keyword, BaseMod.getKeywordDescription(keyword));
-            logger.info("{} getKeywordPrefix:{}", keyword, BaseMod.getKeywordPrefix(keyword));
-            logger.info("{} getKeywordProper:{}", keyword, BaseMod.getKeywordProper(keyword));
-            logger.info("{} getKeywordUnique:{}", keyword, BaseMod.getKeywordUnique(keyword));
-
-            keyword = "six_samurai:六武众";
-//            logger.info("{} getKeywordTitle:{}", keyword, BaseMod.getKeywordTitle(keyword));
+            logger.info("{} getKeywordTitle:{}", keyword, BaseMod.getKeywordTitle(keyword));
             logger.info("{} getKeywordDescription:{}", keyword, BaseMod.getKeywordDescription(keyword));
             logger.info("{} getKeywordPrefix:{}", keyword, BaseMod.getKeywordPrefix(keyword));
             logger.info("{} getKeywordProper:{}", keyword, BaseMod.getKeywordProper(keyword));
             logger.info("{} getKeywordUnique:{}", keyword, BaseMod.getKeywordUnique(keyword));
         } catch (Exception e) {
-            logger.error(e);
+            logger.error("关键词报错", e);
         }
 
     }

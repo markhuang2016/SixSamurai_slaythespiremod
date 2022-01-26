@@ -37,7 +37,8 @@ public class RetrieveExhaustPileSixSamuraiCardAction extends AbstractGameAction 
     @Override
     public void update() {
         // TODO 参考ExhumeAction 优化
-        this.addToBot(new MoveCardsAction(p.hand, p.exhaustPile, x -> x.hasTag(CardTag.SixSamurai), this.amount));
+        this.addToBot(new MoveCardsAction(p.hand, p.exhaustPile, x -> x.hasTag(CardTag.SixSamurai), this.amount,
+            cards -> cards.forEach(x -> x.unfadeOut())));
         this.isDone = true;
     }
 }

@@ -39,7 +39,7 @@ public class RemoveTemporaryRelicAction extends AbstractGameAction {
 
             if (Objects.nonNull(relic.card) && player.exhaustPile.contains(relic.card)) {
                 relic.card.unfadeOut();
-                player.exhaustPile.moveToDiscardPile(relic.card);
+                player.discardPile.moveToDiscardPile(relic.card);
             }
         }
         this.isDone = true;
