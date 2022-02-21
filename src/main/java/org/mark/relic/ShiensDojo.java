@@ -46,4 +46,9 @@ public class ShiensDojo extends TemporaryRelic {
             1,
             cards -> cards.forEach(x -> x.freeToPlayOnce = true)));
     }
+
+    @Override
+    public String getUpdatedDescription() {
+        return this.DESCRIPTIONS[0];
+    }
 }

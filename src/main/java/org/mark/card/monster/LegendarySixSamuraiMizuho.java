@@ -27,7 +27,7 @@ public class LegendarySixSamuraiMizuho extends LegendarySixSamuraiCard {
     }
 
     public LegendarySixSamuraiMizuho(boolean completed) {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.tags.add(CardTags.STRIKE);
         this.baseDamage = 16;
         this.initMonster(3, 16, 10);

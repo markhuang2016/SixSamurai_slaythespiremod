@@ -18,7 +18,7 @@ public class ShiensChancellorEnishi extends ShiensCard {
     public static final String ID = ShiensChancellorEnishi.class.getSimpleName();
 
     public ShiensChancellorEnishi() {
-        super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 22;
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;

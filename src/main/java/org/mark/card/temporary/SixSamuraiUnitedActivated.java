@@ -28,7 +28,7 @@ public class SixSamuraiUnitedActivated extends AbstractSixSamuraiCard {
     private AbstractCard card;
 
     public SixSamuraiUnitedActivated(int magicNumber, boolean upgraded, AbstractCard card) {
-        super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         this.card = card;
         this.purgeOnUse = true;
         this.selfRetain = true;

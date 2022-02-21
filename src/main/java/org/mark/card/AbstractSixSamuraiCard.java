@@ -2,7 +2,6 @@ package org.mark.card;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mark.SixSamuraiMod;
@@ -20,10 +19,11 @@ public abstract class AbstractSixSamuraiCard extends CustomCard {
 
     protected Logger log = LogManager.getLogger(this.cardID);
 
-    public AbstractSixSamuraiCard(String id, int cost, CardType cardType, CardRarity cardRarity, CardTarget cardTarget) {
+    public AbstractSixSamuraiCard(String id, int cost, CardType cardType, CardRarity cardRarity,
+        CardTarget cardTarget) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, getImgUrl(id), cost,
             CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, cardType, CardEnum.ShienColor,
-            getCardRarity(id),
+            cardRarity,
             cardTarget);
         log.info(getImgUrl(id));
     }
@@ -37,11 +37,4 @@ public abstract class AbstractSixSamuraiCard extends CustomCard {
         this.magicNumber = this.baseMagicNumber;
     }
 
-    public static int i = 0;
-    public static CardRarity getCardRarity(String Id) {
-        if (i > 4) {
-            i = 0;
-        }
-        return CardRarity.values()[i++];
-    }
 }

@@ -19,7 +19,7 @@ public class SpiritOfTheSixSamurai extends SixSamuraiCard {
     public static final String ID = SpiritOfTheSixSamurai.class.getSimpleName();
 
     public SpiritOfTheSixSamurai() {
-        super(ID, 1, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseDamage = 5;
         this.baseBlock = 5;
         initMagicNumber(1);

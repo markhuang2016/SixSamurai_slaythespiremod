@@ -16,7 +16,7 @@ public class ReturnOfTheSixSamurai extends AbstractSixSamuraiCard {
     public static final String ID = ReturnOfTheSixSamurai.class.getSimpleName();
 
     public ReturnOfTheSixSamurai() {
-        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }

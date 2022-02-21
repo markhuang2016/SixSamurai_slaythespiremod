@@ -76,4 +76,8 @@ public class GatewayOfTheSix extends CustomRelic implements ClickableRelic {
         this.counter = 0;
     }
 
+    @Override
+    public String getUpdatedDescription() {
+        return this.DESCRIPTIONS[0];
+    }
 }

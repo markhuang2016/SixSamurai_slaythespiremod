@@ -21,7 +21,7 @@ public class LegendarySixSamuraiKageki extends LegendarySixSamuraiCard {
     public static final String ID = LegendarySixSamuraiKageki.class.getSimpleName();
 
     public LegendarySixSamuraiKageki() {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.initMonster(3,2,20);
         this.baseDamage = 2;
     }

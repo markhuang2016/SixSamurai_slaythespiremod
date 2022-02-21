@@ -18,7 +18,7 @@ public class LegendarySixSamuraiEnishi extends LegendarySixSamuraiCard {
     public static final String ID = LegendarySixSamuraiEnishi.class.getSimpleName();
 
     public LegendarySixSamuraiEnishi() {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
         this.initMonster(4,17,7);

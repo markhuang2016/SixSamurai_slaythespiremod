@@ -18,7 +18,7 @@ public class CunningOfTheSixSamurai extends AbstractSixSamuraiCard {
     public static final String ID = CunningOfTheSixSamurai.class.getSimpleName();
 
     public CunningOfTheSixSamurai() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
 
     }
 

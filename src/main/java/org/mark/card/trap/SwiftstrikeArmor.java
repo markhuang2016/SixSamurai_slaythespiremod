@@ -16,7 +16,7 @@ public class SwiftstrikeArmor extends AbstractSixSamuraiCard {
     public static final String ID = SwiftstrikeArmor.class.getSimpleName();
 
     public SwiftstrikeArmor() {
-        super(ID, 1, CardType.POWER, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         initMagicNumber(1);
     }
 

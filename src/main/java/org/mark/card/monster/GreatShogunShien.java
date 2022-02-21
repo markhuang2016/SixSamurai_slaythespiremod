@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.card.ShiensCard;
 import org.mark.enums.CardTag;
+import org.mark.enums.DamageTypeEnum;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,7 @@ public class GreatShogunShien extends ShiensCard {
     public static final String ID = GreatShogunShien.class.getSimpleName();
 
     public GreatShogunShien() {
-        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF_AND_ENEMY);
+        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF_AND_ENEMY);
         this.baseDamage = 25;
         this.initMonster(7, 25, 24);
     }
@@ -37,7 +38,7 @@ public class GreatShogunShien extends ShiensCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // 造成 !D! 点伤害。若手牌有两张及以上的 六武众 卡牌时 ，此卡不消耗能量
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage)));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageTypeEnum.SixSamurai)));
         // TODO 只要这张卡在场上表侧表示存在，对方1回合只能有1次把魔法·陷阱卡发动。
         //自己场上有名字带有「六武众」的怪兽2只以上存在的场合，这张卡可以从手卡特殊召唤。
         //①：只要这张卡在场上表侧表示存在，对方1回合只能有1次把魔法·陷阱卡发动。

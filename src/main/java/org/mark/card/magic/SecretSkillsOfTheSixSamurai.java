@@ -18,7 +18,7 @@ public class SecretSkillsOfTheSixSamurai extends AbstractSixSamuraiCard {
     public static final String ID = SecretSkillsOfTheSixSamurai.class.getSimpleName();
 
     public SecretSkillsOfTheSixSamurai() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
     }
 
     @Override

@@ -16,7 +16,7 @@ public class ShiensSmokeSignal extends AbstractSixSamuraiCard {
     public static final String ID = ShiensSmokeSignal.class.getSimpleName();
 
     public ShiensSmokeSignal(){
-        super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }

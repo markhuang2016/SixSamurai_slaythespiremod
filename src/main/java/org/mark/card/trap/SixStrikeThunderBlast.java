@@ -21,7 +21,7 @@ public class SixStrikeThunderBlast extends AbstractSixSamuraiCard {
     public static final String ID = SixStrikeThunderBlast.class.getSimpleName();
 
     public SixStrikeThunderBlast() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

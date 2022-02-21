@@ -19,7 +19,7 @@ public class LegendarySixSamuraiKizan extends LegendarySixSamuraiCard {
     public static final String ID = LegendarySixSamuraiKizan.class.getSimpleName();
 
     public LegendarySixSamuraiKizan() {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 18;
         this.initMonster(4, 18, 5);
     }
@@ -32,7 +32,8 @@ public class LegendarySixSamuraiKizan extends LegendarySixSamuraiCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // 造成 !D! 点伤害。 NL 若除此卡外手牌有 六武众 卡，这张卡不消耗 [G]。 NL 若除此卡外手牌有两张及以上 六武众 卡，这张卡额外造成3点伤害。
-        int damage = baseDamage;
+        // fixme 钢笔尖触发后伤害预览变化为36，但实际伤害为21
+        int damage = this.damage;
         if (p.hand.group.stream().filter(x -> x.hasTag(CardTag.SixSamurai) && !x.uuid.equals(this.uuid)).count() >=
             2) {
             damage += 3;

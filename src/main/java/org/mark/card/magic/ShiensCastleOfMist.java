@@ -18,7 +18,7 @@ public class ShiensCastleOfMist extends AbstractSixSamuraiCard {
     public static final String ID = ShiensCastleOfMist.class.getSimpleName();
 
     public ShiensCastleOfMist() {
-        super(ID, 1, CardType.POWER, CardRarity.BASIC, CardTarget.ALL_ENEMY);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         initMagicNumber(5);
     }
 

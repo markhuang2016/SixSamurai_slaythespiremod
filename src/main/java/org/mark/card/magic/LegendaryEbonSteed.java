@@ -17,7 +17,7 @@ public class LegendaryEbonSteed extends AbstractSixSamuraiCard {
     public static final String ID = LegendaryEbonSteed.class.getSimpleName();
 
     public LegendaryEbonSteed() {
-        super(ID, 1, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.COMMON, CardTarget.SELF);
         initMagicNumber(1);
     }
 

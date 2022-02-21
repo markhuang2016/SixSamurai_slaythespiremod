@@ -16,7 +16,7 @@ public class SecretSixSamuraiGenba extends SecretSixSamuraiCard {
     public static final String ID = SecretSixSamuraiGenba.class.getSimpleName();
 
     public SecretSixSamuraiGenba() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.initMonster(2, 5, 21);
         this.tuner = true;
     }

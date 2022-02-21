@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.card.SixSamuraiCard;
+import org.mark.enums.DamageTypeEnum;
 
 /**
  * @description: 六武众的先导
@@ -29,7 +30,7 @@ public class HandOfTheSixSamurai extends SixSamuraiCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DiscardAction(p, p, 1, false));
         addToBot(new DamageAction(m,
-            new DamageInfo(p, this.damage, this.damageTypeForTurn),
+            new DamageInfo(p, this.damage, DamageTypeEnum.SixSamurai),
             AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 

@@ -20,7 +20,7 @@ public class SixSamuraiUnited extends AbstractSixSamuraiCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public SixSamuraiUnited() {
-        super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.initMagicNumber(2);
         this.purgeOnUse = true;
         this.cardsToPreview = new SixSamuraiUnitedActivated(this.magicNumber, this.upgraded, this);

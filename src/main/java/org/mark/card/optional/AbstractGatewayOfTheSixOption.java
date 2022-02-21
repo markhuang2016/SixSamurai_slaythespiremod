@@ -17,7 +17,7 @@ import java.util.Objects;
 public abstract class AbstractGatewayOfTheSixOption extends AbstractSixSamuraiCard {
 
     public AbstractGatewayOfTheSixOption(String id) {
-        super(id, -2, CardType.SKILL, CardRarity.BASIC, CardTarget.NONE);
+        super(id, -2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.NONE);
     }
 
     @Override

@@ -17,7 +17,7 @@ public class TempleOfTheSix extends AbstractSixSamuraiCard {
     public static final String ID = TempleOfTheSix.class.getSimpleName();
 
     public TempleOfTheSix() {
-        super(ID, 1, AbstractCard.CardType.POWER, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
+        super(ID, 1, AbstractCard.CardType.POWER, CardRarity.RARE, AbstractCard.CardTarget.SELF);
         initMagicNumber(1);
     }
 

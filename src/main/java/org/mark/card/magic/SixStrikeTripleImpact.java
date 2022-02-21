@@ -18,7 +18,7 @@ public class SixStrikeTripleImpact extends AbstractSixSamuraiCard {
     public static final String ID = SixStrikeTripleImpact.class.getSimpleName();
 
     public SixStrikeTripleImpact() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.ALL_ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         this.baseDamage = 10;
     }
 

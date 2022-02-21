@@ -32,7 +32,7 @@ public class LegendarySixSamuraiShinai extends LegendarySixSamuraiCard {
     }
 
     public LegendarySixSamuraiShinai(boolean completed) {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.tags.add(CardTags.STRIKE);
         this.baseDamage = 15;
         this.initMonster(3, 15, 15);

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.mark.card.SixSamuraiCard;
 import org.mark.enums.CardTag;
+import org.mark.enums.DamageTypeEnum;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,7 @@ public class GrandMasterOfTheSixSamurai extends SixSamuraiCard {
     public static final String ID = GrandMasterOfTheSixSamurai.class.getSimpleName();
 
     public GrandMasterOfTheSixSamurai() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         this.baseDamage = 21;
         this.initMonster(5, 21, 8);
     }
@@ -37,7 +38,7 @@ public class GrandMasterOfTheSixSamurai extends SixSamuraiCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // 造成 !D! 点伤害。 NL 若手牌中有 此卡以外的 六武众 卡牌，此卡不消耗 [G] 。
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageTypeEnum.SixSamurai)));
         this.temporaryFree = false;
     }
     // TODO

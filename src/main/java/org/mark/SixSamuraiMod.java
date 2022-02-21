@@ -188,7 +188,8 @@ public class SixSamuraiMod implements RelicGetSubscriber, PostPowerApplySubscrib
 
         if (keywords != null) {
             for (Keyword keyword : keywords) {
-                BaseMod.addKeyword(ModId, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                // 最好用小写字母，因为匹配时会自动按小写匹配
+                BaseMod.addKeyword("six_samurai", keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
     }
@@ -203,24 +204,6 @@ public class SixSamuraiMod implements RelicGetSubscriber, PostPowerApplySubscrib
         if (!language.equals(Settings.GameLanguage.ENG)) {
             loadLocKeywords(language);
         }
-
-        logKeyword("六武众");
-        logKeyword("SixSamurai:六武众");
-        logKeyword("six_samurai:六武众");
-    }
-
-    private void logKeyword(String keyword) {
-        logger.info("keyword:{}", keyword);
-        try {
-            logger.info("{} getKeywordTitle:{}", keyword, BaseMod.getKeywordTitle(keyword));
-            logger.info("{} getKeywordDescription:{}", keyword, BaseMod.getKeywordDescription(keyword));
-            logger.info("{} getKeywordPrefix:{}", keyword, BaseMod.getKeywordPrefix(keyword));
-            logger.info("{} getKeywordProper:{}", keyword, BaseMod.getKeywordProper(keyword));
-            logger.info("{} getKeywordUnique:{}", keyword, BaseMod.getKeywordUnique(keyword));
-        } catch (Exception e) {
-            logger.error("关键词报错", e);
-        }
-
     }
 
     private Settings.GameLanguage languageSupport() {
@@ -234,7 +217,6 @@ public class SixSamuraiMod implements RelicGetSubscriber, PostPowerApplySubscrib
     }
 
     private void loadCardsToAdd() {
-        // TODO 调整各种稀有度卡片数量
         //将自定义的卡牌添加到这里
         this.cardsToAdd.clear();
         // 魔法卡

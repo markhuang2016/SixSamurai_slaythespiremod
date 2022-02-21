@@ -17,7 +17,7 @@ public class LegendarySecretOfTheSixSamurai extends SixSamuraiCard {
     public static final String ID = LegendarySecretOfTheSixSamurai.class.getSimpleName();
 
     public LegendarySecretOfTheSixSamurai() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.SELF);
         this.baseBlock = 20;
         this.initMonster(4, 5, 20);
     }
